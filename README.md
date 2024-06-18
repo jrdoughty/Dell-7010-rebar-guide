@@ -14,9 +14,9 @@ https://www.tachytelic.net/2021/12/dell-optiplex-7010-pcie-nvme/
             2. Move the driver exe file over to this flash drive. I placed mine at the base of the drive
         3. A flash drive with win 10 or 11 installer
             1. Go to the installation media website and get the version you want to work with in the future. However which version won’t matter for the purpose of this tutorial: https://support.microsoft.com/en-us/windows/create-installation-media-for-windows-99a58364-8c02-206f-aa6f-40c3b507420d 
-            2. Once you’ve created a installer flash, go into its efi folder. Add ‘.old’ to the efi file
+            2. Once you’ve created a installer flash, go into its efi/boot/ folder. Add ‘.old’ to the bootx64.efi file
             3. download modgrubshell.efi from https://github.com/datasone/grub-mod-setup_var/releases/ 
-            4. put it in the efi folder and rename it to match the original file’s original name.
+            4. put it in the efi folder and rename it to match the original file’s original name of bootx64.efi
         4. Install Intel Management Engine: https://dl.dell.com/FOLDER04469185M/5/Intel-Management-Engine-Components-Installer_C3VMM_WIN_11.0.6.1194_A02.EXE 
         5. Download Intel System Tools: https://www.tachytelic.net/wp-content/uploads/Intel-ME-System-Tools-v8-r3.zip 
         6. Download the 0.28 UEFI Tool version: https://github.com/LongSoft/UEFITool/releases/download/0.28.0/UEFITool_0.28.0_win32.zip 
