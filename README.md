@@ -51,22 +51,24 @@ Ok, so what’re we doing here? We’re creating a solid bios to build on. Runni
 
     4. Set the service mode jumper: https://www.tachytelic.net/2021/12/dell-optiplex-7010-pcie-nvme/
         1. either snag the password reset jumper, or put something conductive between the two pins as it boots. It’ll retain this setting until you do a hard shut down 
-    5. Backup the bios with fptw64 using ‘fptw64.exe -d backup.bin’
-    6. Open the backup.bin with the uefi tool
-    7. Find the pcibus entry with the search. Write click it and use insert after and insert the rebar ffs file
-    8. Save as a modified.bin file. Next thing would normally be to do the dsdt and patching... But I am giving you the patched files.
-    9. With MMTool, open the modified.bin file 
-    10. Replace each entry that matches what I attached, namely:
+    5. Open the command prompt as an admin
+    6. navigate to C:\Users\YourAccount\Downloads\Intel ME System Tools v8 r3\Flash Programming Tool\Windows64. 
+    7. Backup the bios with fptw64 using ‘fptw64.exe -d backup.bin’
+    8. Open the backup.bin with the uefi tool
+    9. Find the pcibus entry with the search. Write click it and use insert after and insert the rebar ffs file
+    10. Save as a modified.bin file. Next thing would normally be to do the dsdt and patching... But I am giving you the patched files.
+    11. With MMTool, open the modified.bin file 
+    12. Replace each entry that matches what I attached, namely:
         1. AmiBoardInfo.ffs
         2. PchS3Peim.ffs
         3. SciBus.ffs
         4. PCIHostBridge.ffs
         5. Runtime.ffs
-    11. Save out a final.bin file 
-    12. Apply it with ‘fptw64 -bios -f final.bin’
+    13. Save out a final.bin file 
+    14. Apply it with ‘fptw64 -bios -f final.bin’
 WARNING, this next step requires the bios setting to be correct, or you’ll brick your bios!
-    13. Restart and boot into a flash drive with grub installed on it.
-    14. From grub use ‘setup_var 0x2 0x1’
-    15. Reboot
-    16. Run the the rebar state program
-    17. Check GPU-Z, and everything should be good
+    15. Restart and boot into a flash drive with grub installed on it.
+    16. From grub use ‘setup_var 0x2 0x1’
+    17. Reboot
+    18. Run the the rebar state program
+    19. Check GPU-Z, and everything should be good
