@@ -44,7 +44,8 @@ The 7010 files are files you’d normally have to create via patching. However, 
         1. Disable Legacy Boot options
         2. Set your bios to use uefi boot
         3. Make sure secure boot is off
-        4. Change any other settings your machine needs, such as the boot order you want. You basically need every bios setting set before the next step
+        4. disable C State
+        5. Change any other settings your machine needs, such as the boot order you want. You basically need every bios setting set before the next step
 
 Ok, so what’re we doing here? We’re creating a solid bios to build on. Running the bios installer gets us on the latest, and then we’re making sure the bios settings match what we’ll need by the end. The biggest thing is when we wrap this process up, you can’t have Legacy or Secure Boot going, or after these mods, the bios won’t display video. 
 
