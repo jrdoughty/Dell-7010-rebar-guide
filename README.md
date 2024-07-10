@@ -56,7 +56,7 @@ Ok, so what’re we doing here? We’re creating a solid bios to build on. Runni
     6. navigate to C:\Users\YourAccount\Downloads\Intel ME System Tools v8 r3\Flash Programming Tool\Windows64. 
     7. Backup the bios with fptw64 using ‘fptw64.exe -d backup.bin’
     8. Open the backup.bin with the uefi tool
-    9. Find the pcibus entry with the search. Write click it and use insert after and insert the ReBarDxe.ffs file
+    9. Find the pcibus entry with the search. Write click it and use insert after and insert the ReBarDxe.ffs file (this would also be the opportune time to do the nvme mod if you want to do that as well, but what ffs file you need and where to put it is in the tachytelic.net guide.)
     10. Save as a modified.bin file. Next thing would normally be to do the dsdt and patching... But I am giving you the patched files.
     11. With MMTool, open the modified.bin file 
     12. Replace each entry that matches what I attached, namely:
