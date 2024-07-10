@@ -74,3 +74,4 @@ Ok, so what’re we doing here? We’re creating a solid bios to build on. Runni
     19. Check GPU-Z, go to advanced, select resizable bar in the drop down, and everything should be good
 
     
+I highly recommend pairing this change with an arc A380, which pairs very well with the i7 3770/xeon 1270/xeon 1275 top end processors of the 3rd intel gen. I found they don't bottle neck each other, and the 6GB of VRAM is adequate for most modern games at lower settings.
