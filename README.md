@@ -21,7 +21,8 @@ https://www.tachytelic.net/2021/12/dell-optiplex-7010-pcie-nvme/
         5. Download Intel System Tools: https://www.tachytelic.net/wp-content/uploads/Intel-ME-System-Tools-v8-r3.zip 
         6. Download the 0.28 UEFI Tool version: https://github.com/LongSoft/UEFITool/releases/download/0.28.0/UEFITool_0.28.0_win32.zip 
         7. Download MMTool https://groups.google.com/g/microsoft.public.win32.programmer.kernel/c/SS1arKGD_Pg?pli=1 
-        8. Download the 7010 specific files https://drive.google.com/drive/folders/1bKjuearyBexTY4RDtL_OqfhRuf_sQQ-Y?usp=sharing 
+        8. Download the 7010 specific files https://drive.google.com/drive/folders/1bKjuearyBexTY4RDtL_OqfhRuf_sQQ-Y?usp=sharing
+        9. Download ReBarDxe.ffs and ReBarState.exe from https://github.com/xCuri0/ReBarUEFI/releases
 
 Ok, so what are each of these things and why are we getting them? 
 We’re grabbing the latest driver because in the case of the 7010, we know it works with this methond. Also, this process has to start from an existing driver, so might as well get the latest and greatest. We’re getting the exe file because dell doesn’t distribute their bios files on their own. If you use someone elses bios file instead of one created on your own machine from running the exe, you’ll find its incompatible. This is because dell bakes in the device info into the bios file, making it so the exe’s update method is the only way to get a bios that works on your machine. 
@@ -55,7 +56,7 @@ Ok, so what’re we doing here? We’re creating a solid bios to build on. Runni
     6. navigate to C:\Users\YourAccount\Downloads\Intel ME System Tools v8 r3\Flash Programming Tool\Windows64. 
     7. Backup the bios with fptw64 using ‘fptw64.exe -d backup.bin’
     8. Open the backup.bin with the uefi tool
-    9. Find the pcibus entry with the search. Write click it and use insert after and insert the rebar ffs file
+    9. Find the pcibus entry with the search. Write click it and use insert after and insert the ReBarDxe.ffs file
     10. Save as a modified.bin file. Next thing would normally be to do the dsdt and patching... But I am giving you the patched files.
     11. With MMTool, open the modified.bin file 
     12. Replace each entry that matches what I attached, namely:
@@ -66,9 +67,10 @@ Ok, so what’re we doing here? We’re creating a solid bios to build on. Runni
         5. Runtime.ffs
     13. Save out a final.bin file 
     14. Apply it with ‘fptw64 -bios -f final.bin’
-WARNING, this next step requires the bios setting to be correct, or you’ll brick your bios!
-    15. Restart and boot into a flash drive with grub installed on it.
+    15. WARNING, this next step requires the bios setting to be correct, or you’ll brick your bios! Restart and boot into a flash drive with grub installed on it.
     16. From grub use ‘setup_var 0x2 0x1’
     17. Reboot
-    18. Run the the rebar state program
-    19. Check GPU-Z, and everything should be good
+    18. Run the the ReBarState.exe program
+    19. Check GPU-Z, go to advanced, select resizable bar in the drop down, and everything should be good
+
+    
