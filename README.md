@@ -20,7 +20,7 @@ https://www.tachytelic.net/2021/12/dell-optiplex-7010-pcie-nvme/
         4. Install Intel Management Engine: https://dl.dell.com/FOLDER04469185M/5/Intel-Management-Engine-Components-Installer_C3VMM_WIN_11.0.6.1194_A02.EXE 
         5. Download Intel System Tools: https://www.tachytelic.net/wp-content/uploads/Intel-ME-System-Tools-v8-r3.zip 
         6. Download the 0.28 UEFI Tool version: https://github.com/LongSoft/UEFITool/releases/download/0.28.0/UEFITool_0.28.0_win32.zip 
-        7. Download MMTool https://groups.google.com/g/microsoft.public.win32.programmer.kernel/c/SS1arKGD_Pg?pli=1 
+        7. Download MMTool https://softradar.com/mmtool/
         8. Download the 7010 specific files https://drive.google.com/drive/folders/1bKjuearyBexTY4RDtL_OqfhRuf_sQQ-Y?usp=sharing
         9. Download ReBarDxe.ffs and ReBarState.exe from https://github.com/xCuri0/ReBarUEFI/releases
 
@@ -62,7 +62,7 @@ Ok, so what’re we doing here? We’re creating a solid bios to build on. Runni
     12. Replace each entry that matches what I attached, namely:
         1. AmiBoardInfo.ffs
         2. PchS3Peim.ffs
-        3. SciBus.ffs
+        3. PciBus.ffs
         4. PCIHostBridge.ffs
         5. Runtime.ffs
     13. Save out a final.bin file 
